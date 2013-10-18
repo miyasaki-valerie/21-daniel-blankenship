@@ -59,7 +59,7 @@ public class GameScore implements Serializable {
      * input the player and dealers scores
      **********************************************************/
     void calcScore(){
-          
+        
         for (int i = 0; i < gameSize; i++)
         {
             Scanner input = new Scanner(System.in);

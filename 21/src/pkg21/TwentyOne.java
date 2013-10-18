@@ -8,26 +8,21 @@ import java.util.Scanner;
 public class TwentyOne {
         
     String name;
-    String instructions = "\tTHIS IS THE GAME **21**\n\n"
-            + "The instructions are as follows...\n";
+    String instructions = "\tTHIS IS THE GAME **21**\n\n";
     
     public static void main(String[] args) {
       TwentyOne to = new TwentyOne();  //access member functions of TwentyOne
-      to.getName();                    //get user name  
-      to.displayHelp();                //display help options    
+      to.getName();                    //get user name    
+      to.displayHelp();                //displays name and main title
       
-      // Shows available commands from game menu
-      GameMenu commands = new GameMenu();
-      commands.showCommands();
+      // Displays Main Menu options     
+      MainMenuView v = new MainMenuView();
+      v.display();
+      v.userInput();
       
-      // Displays the wins and losses
-      Player player = new Player();
-    
-      // Displays the scores 
-      System.out.println("\n**PLAYER SCORING**");
-      GameScore score = new GameScore();
-      score.requestGameSize();
-      score.calcScore();        //user inputs scores        
+      
+      MainMenuControl ctrl = new MainMenuControl();
+      ctrl.processCommand();
     }
     
     public void getName() {
