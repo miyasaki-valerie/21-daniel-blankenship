@@ -1,9 +1,7 @@
 /**************************************************************
- * Authors: Valerie Miyasaki
- *          Daniel Blankenship  
+ * Authors: Daniel Blankenship  
  *************************************************************/
 package pkg21;
-import java.io.IOException;
 import java.util.Scanner;
 
 public class TwentyOne {
@@ -11,29 +9,15 @@ public class TwentyOne {
     String name;
     String instructions = "\tTHIS IS THE GAME **21**\n\n";
     
-    public static void main(String[] args) throws IOException {
+    public static void main(String[] args) {
       TwentyOne to = new TwentyOne();  //access member functions of TwentyOne
       to.getName();                    //get user name    
       to.displayHelp();                //displays name and main title
+            
+      MainMenuView MainMenuView = new MainMenuView();
+      MainMenuView.getInput();
       
-      //Displays Help Menu options
-      HelpMenuView H = new HelpMenuView();
-      H.displayHelp();
-      
-      HelpMenuControl C = new HelpMenuControl();
-      C.processCommand();
-      
-      
-      // Displays Main Menu options     
-      MainMenuView v = new MainMenuView();
-      v.display();
-      v.userInput();
-      
-      
-      MainMenuControl ctrl = new MainMenuControl();
-      ctrl.processCommand();
     }
-    
     public void getName() {
         Scanner input = new Scanner(System.in);
         System.out.println("Please enter your name: ");

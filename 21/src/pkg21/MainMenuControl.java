@@ -1,58 +1,48 @@
 package pkg21;
 import java.io.Serializable;
 
-/*
- * MAIN MENU CONTROL
- * Incorporates functionality for 
- * the main menu class
- * 
- * @author Daniel Blankenship
+/**
+ *
+ * @author jacksonrkj
  */
-public class MainMenuControl implements Serializable {
+public class MainMenuControl implements Serializable  {
     
-    // Gives access to the input variable
-    MainMenuView main = new MainMenuView();
-    GameScore game = new GameScore();
-    
-    /*
-     * START GAME
-     */
-    int processCommand()
-    {
-        int temp;
-        temp = main.userInput();
+    public MainMenuControl() {
         
-        switch (temp)
-        {
-            case 1:
-                game.requestGameSize();
-                game.calcScore();
-                break;
-            case 2:
-                main.display();
-                break;
-            case 3:
-                System.exit(1);
-                break;
-            case 4:
-                showGameRules();
-                break;
-            default:
-                main.display();
-        }
-        return temp;
-    }
-    
-    /*
-     * DISPLAY HELP
-     */
-    void showGameRules()
+    } 
+
+    public void displayGameStart()
     {
-        System.out.println("\n***********************************************************************************************\n"
-                           + "* Get 21 points on your first two cards (called a blackjack), without a dealer blackjack;\n" +
-                             "* Reach a final score higher than the dealer without exceeding 21;\n"
-                           + "*    or\n" +
-                             "* Let the dealer draw additional cards until his hand exceeds 21.\n"
-                           + "***********************************************************************************************\n");  
+        System.out.println();
+        this.displayHelpBorder();
+        System.out.println( "\tEXECUTE GAME\n" );
+        displayHelpBorder();
+    }
+    public void displayInstructions() {
+        System.out.println();
+        this.displayHelpBorder();             
+        System.out.println( 
+                "\tThe game board for Tic-Tac-Toe. It consist of a grid of "
+                + "\n\tlocations. Players place their marker on the different locations "
+                + "\n\ton the board in an effort to win the game. The default board is "
+                + "\n\t3 rows by 3 columns.");
+        displayHelpBorder();
+    }
+        
+    public void displayGameHelp() {
+        System.out.println();
+        displayHelpBorder();     
+        System.out.println( 
+                 "\tThe objective of the game is to be the first player to mark three "
+                + "\n\tsquares vertically, horizontally or diagonally. Each player takes "
+                + "\n\tturns placing their marker in one of the locations on the "
+                + "\n\tboard. The first player to get \"three-in-a-row\" is the winner."
+                ); 
+        displayHelpBorder();
+    }
+                
+    public void displayHelpBorder() {       
+        System.out.println(
+        "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
 }
