@@ -22,10 +22,10 @@ public class MainMenuControl implements Serializable  {
         System.out.println();
         this.displayHelpBorder();             
         System.out.println( 
-                "\tThe game board for Tic-Tac-Toe. It consist of a grid of "
-                + "\n\tlocations. Players place their marker on the different locations "
-                + "\n\ton the board in an effort to win the game. The default board is "
-                + "\n\t3 rows by 3 columns.");
+                "\tThis is the game 21, also known as Blackjack. "
+                + "\n\tEach player draws a card and decides to hit or stay. "
+                + "\n\tWhichever player gets the closest to 21 without going"
+                + "\n\tover 21 wins the round.");
         displayHelpBorder();
     }
         
@@ -33,11 +33,7 @@ public class MainMenuControl implements Serializable  {
         System.out.println();
         displayHelpBorder();     
         System.out.println( 
-                 "\tThe objective of the game is to be the first player to mark three "
-                + "\n\tsquares vertically, horizontally or diagonally. Each player takes "
-                + "\n\tturns placing their marker in one of the locations on the "
-                + "\n\tboard. The first player to get \"three-in-a-row\" is the winner."
-                ); 
+                 "\tDISPLAY HELP OPTIONS\n" ); 
         displayHelpBorder();
     }
                 
