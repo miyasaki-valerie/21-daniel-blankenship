@@ -16,12 +16,17 @@ public class TwentyOne {
       to.getName();                    //get user name    
       to.displayHelp();                //displays name and main title
       
+    SettingsMenuView s = new SettingsMenuView();
+    s.displaySettingsMenu();
+    s.getSetting();
+    
+    
+    SettingsMenuControl settingsCtrl = new SettingsMenuControl();
+    settingsCtrl.processSettingsCommand();
+    
       //Displays Help Menu options
-      HelpMenuView H = new HelpMenuView();
-      H.displayHelp();
-      
-      HelpMenuControl C = new HelpMenuControl();
-      C.processCommand();
+     /* HelpMenuView H = new HelpMenuView();
+      H.displayHelp();*/
       
       
       // Displays Main Menu options     

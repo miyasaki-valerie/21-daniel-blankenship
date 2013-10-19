@@ -11,7 +11,7 @@ package pkg21;
 public class HelpMenuControl {
     HelpMenuView helpMenu = new HelpMenuView();
     
-    public void processCommand(){
+    public void processHelp(){
         
         switch(helpMenu.selection) {
             

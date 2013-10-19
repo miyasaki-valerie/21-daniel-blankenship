@@ -11,11 +11,10 @@ import java.io.IOException;
  * @author Valerie
  */
 public class HelpMenuView {
-    public char selection, ignore;
-    
+    char selection, ignore;
+    HelpMenuControl helpCommand = new HelpMenuControl();
     //Displays help menu
     public void displayHelp() throws IOException{
-      for (;;){
             do{
         System.out.println("\n***********************************************\n"
                          + "* HELP MENU OPTIONS\n"
@@ -29,10 +28,8 @@ public class HelpMenuView {
        do{
             ignore = (char) System.in.read();
         } while (ignore !='\n');
-        }while (selection != 'I' | selection != 'R' | selection != 'T');
-             
-      if (selection == 'X') {break;}    
-    }
+        }while (selection != 'I' | selection != 'R' | selection != 'T');  
+            helpCommand.processHelp();
     }
     
     public void displayInstructions(){
