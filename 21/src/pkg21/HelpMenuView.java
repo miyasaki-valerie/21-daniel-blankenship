@@ -23,7 +23,7 @@ public class HelpMenuView {
                          + "* Enter T = Strategy Tips\n"
                          + "* Enter X = Exit\n"
                          + "***********************************************\n");
-        selection = (char) System.in.read();
+       selection = (char) System.in.read();
         
        do{
             ignore = (char) System.in.read();

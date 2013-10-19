@@ -2,58 +2,97 @@ package pkg21;
 import java.io.Serializable;
 import java.util.Scanner;
 
-/*
- * MAIN MENU VIEW
- *  Displays the Main Menu options
- * 
- * @author Daniel Blankenship
- */
-public class MainMenuView implements Serializable{
-    private int userInput;
-    
-    /*
-     * USER INPUT
-     * Recieves command to interact with MAIN MENU
-     */
-    int userInput()
-    {
-        // continue to loop until user inputs a value
-        //  less than 4.
-        // Get input from the user
-   
+
+public class MainMenuView implements Serializable  {
         
-        do
-        {
-            Scanner input = new Scanner(System.in);
-            System.out.println("\nEnter command: ");
-            userInput = input.nextInt(); // store input into
-                                         //  user input variable
-            
-            // Display menu if wrong input was entered
-            if (userInput > 4)
-                display();
-            
-        } while (userInput > 4); // Continue to loop if the answer if 
-                                 //  is wrong.
-        return userInput;
-    }
+   
+    private final static String[][] menuItems = {
+        {"S", "Start Game"},
+        {"I", "Instructions"}, 
+        {"H", "Help"},
+        {"X", "Exit Game"}        
+    };
     
-    /*
-     *  DISPLAYS THE MAIN MENU
-     *  OPTIONS:
-     *      Start Game
-     *      Help
-     *      Exit
-     *      Game Instructions
-     */
-    void display()
-    {
-      System.out.println("\n***********************************************\n"
-                         + "* MAIN MENU OPTIONS\n"
-                         + "* Enter 1 = Start Game\n"
-                         + "* Enter 2 = Help\n"
-                         + "* Enter 3 = Exit\n"
-                         + "* Enter 4 = Instructions\n"
-                         + "***********************************************\n");
+    // Create instance of the HelpMenuControl (action) class
+    private MainMenuControl MainMenuControl = new MainMenuControl();
+    private GameScore GameScore = new GameScore();
+    
+    // default constructor
+    public MainMenuView() {
+        
+    } 
+    
+    // display the help menu and get the end users input selection
+    public String getInput() {       
+        
+        String gameStatus = InGame.PLAYING;
+        do {
+            this.display();
+            
+            // get commaned entered
+            String command = this.getCommand();
+            switch (command) {
+                case "S":
+                    this.MainMenuControl.displayGameStart();
+                    break;
+                case "I":
+                    this.MainMenuControl.displayInstructions();
+                    break;
+                case "H":
+                    this.MainMenuControl.displayGameHelp();
+                    break;                  
+                case "X":
+                    return "EXIT";
+            }
+        } while (!gameStatus.equals("EXIT"));  
+        
+         return gameStatus;
     }
+
+        // displays the help menu
+    public final void display() {
+        System.out.println("\n\t===============================================================");
+        System.out.println("\tEnter the letter associated with one of the following commands:");
+
+        for (int i = 0; i < MainMenuView.menuItems.length; i++) {
+            System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
+        }
+        System.out.println("\t===============================================================\n");
+    }
+
+    
+    
+    // retrieves the command entered by the end user
+    protected final String getCommand() {
+
+        Scanner inFile = new Scanner(System.in);
+        String command;
+        boolean valid = false;
+        do {
+
+            command = inFile.nextLine();
+            command = command.trim().toUpperCase();
+            valid = validCommand(command);
+            if (!valid) {
+                System.out.println("Invalid command. Please enter a valid command.");
+                continue;
+            }
+                
+        } while (!valid);
+        
+        return command;
+    }
+     
+    // determines if the command is valid
+    private boolean validCommand(String command) {
+        String[][] items = MainMenuView.menuItems;
+
+        for (String[] item : MainMenuView.menuItems) {
+            if (item[0].equals(command)) {
+                return true;
+            }
+        }
+        return false;
+    }
+  
 }

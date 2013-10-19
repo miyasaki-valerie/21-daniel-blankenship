@@ -5,15 +5,9 @@ package pkg21;
 import java.io.Serializable;
 
 public class InGame implements Serializable{
-    String hit = "h";
-    String stand = "st";
-    String shuffle = "sh";
-    String deal = "d";
+    public static final String PLAYING = "PLAYING";
 
     public void display() {
-        System.out.println(hit);
-        System.out.println(stand);
-        System.out.println(shuffle);
-        System.out.println(deal);
+        
     }
 }
