@@ -8,50 +8,50 @@ import java.io.IOException;
 
 /**
  *
- * @author Valerie
+ * @author Valerie Lesson 4
  */
 public class HelpMenuView {
     public char selection, ignore;
+    public HelpMenuControl helpCommands = new HelpMenuControl();
     
     //Displays help menu
-    public void displayHelp() throws IOException{
-      for (;;){
-            do{
-        System.out.println("\n***********************************************\n"
-                         + "* HELP MENU OPTIONS\n"
-                         + "* Enter I = Game Instructions\n"
-                         + "* Enter R = Rules and Objective\n"
-                         + "* Enter T = Strategy Tips\n"
-                         + "* Enter X = Exit\n"
-                         + "***********************************************\n");
-       selection = (char) System.in.read();
+    public void displayHelp() throws IOException {
+      { System.out.println("HELP MENU OPTIONS");
+        System.out.println("Enter I = Game Instructions");
+        System.out.println("Enter R = Rules and Objective");
+        System.out.println("Enter T = Strategy Tips");
+        System.out.println("Enter X = Exit");
+       
+        //gets user input
+        selection = (char) System.in.read();
         
        do{
             ignore = (char) System.in.read();
         } while (ignore !='\n');
-        }while (selection != 'I' | selection != 'R' | selection != 'T');
-             
-      if (selection == 'X') {break;}    
+             }
+      
+      //processes input for menu item selection using HelpMenu Control Object
+      switch(selection) {
+            
+            case 'I':
+                helpCommands.displayInstructions();
+                break;
+                
+            case 'R':
+                helpCommands.displayRules();
+                break;
+                
+            case 'T':
+                helpCommands.displayTips();
+                
+            case 'X':
+                helpCommands.exitToMain();
+                break;
+            
+        }
     }
-    }
-    
-    public void displayInstructions(){
-        System.out.println("Instructions.");
-       }
-    
-    public void displayRules(){
-        System.out.println("Rules");
-    }
-    
-    public void displayTips(){
-        System.out.println("Tips");
-    }
-    
-    public void exitToMain(){
-        MainMenuView showMain = new MainMenuView();
-        showMain.display();
-        
-    }
+   
+  
 }
 
    

@@ -4,33 +4,44 @@
  */
 package pkg21;
 
+import java.io.IOException;
+import java.io.Serializable;
+
 /**
  *
- * @author Valerie
+ * @author Valerie Lesson 4
  */
-public class HelpMenuControl {
-    HelpMenuView helpMenu = new HelpMenuView();
+public class HelpMenuControl implements Serializable  {
     
-    public void processCommand(){
+    public HelpMenuControl() {
         
-        switch(helpMenu.selection) {
-            
-            case 'I':
-                helpMenu.displayInstructions();
-                break;
-                
-            case 'R':
-                helpMenu.displayRules();
-                break;
-                
-            case 'T':
-                helpMenu.displayTips();
-                
-            case 'X':
-                helpMenu.exitToMain();
-                break;
-            
+    } 
+
+        public void displayInstructions() {
+        System.out.println();
+        System.out.println( 
+                "\tThis is the game 21, also known as Blackjack. "
+                + "\n\tEach player draws a card and decides to hit or stay. "
+                + "\n\tWhichever player gets the closest to 21 without going"
+                + "\n\tover 21 wins the round.");
         }
-    }
+        
+        public void displayRules() {
+        System.out.println();
+        System.out.println( 
+                "Rules of 21");
+        }
+   
+        public void displayTips() {
+        System.out.println();
+        System.out.println("Strategy and Game Tips");
+        }
+        
+        public void exitToMain() {
+        System.out.println();
+        MainMenuView showMain = new MainMenuView();
+                showMain.display();
+        }
+} 
     
-}
+

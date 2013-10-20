@@ -1,4 +1,5 @@
 package pkg21;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.Scanner;
 
@@ -23,7 +24,7 @@ public class MainMenuView implements Serializable  {
     } 
     
     // display the help menu and get the end users input selection
-    public String getInput() {       
+    public String getInput() throws IOException {       
         
         String gameStatus = InGame.PLAYING;
         do {

@@ -2,6 +2,7 @@
  * Authors: Daniel Blankenship  
  *************************************************************/
 package pkg21;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class TwentyOne {
@@ -9,13 +10,14 @@ public class TwentyOne {
     String name;
     String instructions = "\tTHIS IS THE GAME **21**\n\n";
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
       TwentyOne to = new TwentyOne();  //access member functions of TwentyOne
       to.getName();                    //get user name    
       to.displayHelp();                //displays name and main title
-            
-      MainMenuView MainMenuView = new MainMenuView();
-      MainMenuView.getInput();
+   
+         
+     MainMenuView MainMenuView = new MainMenuView();
+     MainMenuView.getInput();
       
     }
     public void getName() {
