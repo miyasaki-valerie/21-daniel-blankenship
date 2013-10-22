@@ -49,7 +49,7 @@ public class MainMenuView implements Serializable  {
          return gameStatus;
     }
 
-        // displays the help menu
+    // displays the help menu
     public final void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
@@ -59,9 +59,7 @@ public class MainMenuView implements Serializable  {
         }
         System.out.println("\t===============================================================\n");
     }
-
-    
-    
+  
     // retrieves the command entered by the end user
     protected final String getCommand() {
 
