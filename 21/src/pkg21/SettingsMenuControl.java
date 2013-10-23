@@ -1,27 +1,31 @@
 
 package pkg21;
 
-import java.io.Serializable;
 
 
-public class SettingsMenuControl implements Serializable {
+public class SettingsMenuControl{    
     
-    SettingsMenuView settings = new SettingsMenuView();
-    
-    int processSettingsCommand(){
-        int num;
-        num = settings.getSetting();
+    public SettingsMenuControl(){
         
-        switch(num){
-            case 1:
-                System.out.println("We can change deck colors.");
-             
-            case 2:
-                System.out.println("Let's adjust the game sound.");
-                
-            default:
-                settings.displaySettingsMenu();        
-        }  
-        return num;
     }
-}
+    
+    public void displayDeckColor(){
+        System.out.println("You Just Channged Your Deck Color.");
+       }
+    
+    public void displaySound(){
+        System.out.println("Let's Adjust The Sound.");
+    }
+
+    public void exitSettings() {
+          MainMenuView mainM = new MainMenuView();
+          mainM.display();
+    }
+        
+       
+           
+                
+   }  
+        
+    
+
