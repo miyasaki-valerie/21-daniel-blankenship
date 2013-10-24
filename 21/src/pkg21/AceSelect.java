@@ -6,31 +6,26 @@ package pkg21;
 import java.io.Serializable;
 import java.util.Scanner;
 
-/**
- *
- * @author Daniel Blankenship
+/*
+ * ACE SELECT
+ * 
+ * This class allows the player to select whether 
+ *  Aces are High or Low when selected for the round
  */
 public class AceSelect implements Serializable {
     
+    // Multidimensional String
     private final static String[][] ace = {
         {"H", "Aces High"},
         {"L", "Aces Low"},
         {"X", "EXIT"}
     };
     
-    AceSelect()
-    {
-        System.out.println("You got an ace, would you like Aces High "
-                + "\n\tor Aces Low?"
-                + "\n\n\tInput H for high\n"
-                + "\tInput L for low\n");
-    }
-    
     public String getInput()
     {
         String gameStatus = InGame.PLAYING;
         
-        while (!gameStatus.equals("EXIT"))
+        while (!gameStatus.equals("EXIT")) 
         {
             this.display();
             
@@ -49,27 +44,43 @@ public class AceSelect implements Serializable {
         return gameStatus;
     }
     
+    // GET COMMAND
+    //  Checks to see whether the command 
+    //   is valid or not
     protected final String getCommand()
     {
         Scanner inFile = new Scanner(System.in);
-        String command = " ";
-        boolean valid = false;
+        String command = " ";  // initialize command 
+        boolean valid = false; // initialize boolean to false
         
-        while (!valid)
+        // while command is being recieved
+        while (!valid) 
         {
+            // read in command
             command = inFile.nextLine();
+            
+            // change command to uppercase to match
+            //  request
             command = command.trim().toUpperCase();
+            
+            // makes a call to validCommand 
             valid = validCommand(command);
+            
+            // if validation is failed 
+            //  print out error message
             if (!valid) 
             {
                 System.out.println("\tInvalid command. Enter H or L.");
-                continue;
+                continue; 
             }
         } 
         
         return command;
     }
     
+    // VALIDATE COMMAND
+    // validates whether the command is true or 
+    //  false
     private boolean validCommand(String command)
     {
         String[][] items = ace;

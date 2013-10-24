@@ -18,7 +18,6 @@ public class Deck implements Serializable{
     {
         for (int i = 0; i < 52; i++)
         {
-            
             myCardDeck[i] = random.nextInt(52);        
         }
         

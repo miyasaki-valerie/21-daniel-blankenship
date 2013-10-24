@@ -66,11 +66,13 @@ public class MainMenuView implements Serializable  {
         Scanner inFile = new Scanner(System.in);
         String command;
         boolean valid = false;
+        
         do {
-
+            
             command = inFile.nextLine();
             command = command.trim().toUpperCase();
             valid = validCommand(command);
+            
             if (!valid) {
                 System.out.println("Invalid command. Please enter a valid command.");
                 continue;
