@@ -34,14 +34,3 @@ public class TwentyOne {
         s.shuffleCardsVal();
     }
 }
-
-       // Demonstrates implementation of ACE SELECT class
-       // AceSelect ace = new AceSelect();
-       // ace.getInput();
-        
-        
-             
-        Shuffle s = new Shuffle();
-        s.shuffleCardsVal();
-    }
- }
