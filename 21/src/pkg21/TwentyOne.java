@@ -9,7 +9,7 @@ import java.util.Scanner;
 public class TwentyOne {
     
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
                 
         // Creates an instance of GET INITIAL PROMPT class
         GetInitPrompt name = new GetInitPrompt();
@@ -26,9 +26,14 @@ public class TwentyOne {
         // MainMenuView MainMenuView = new MainMenuView();
         // MainMenuView.getInput(); // Prompts for menu command
         
+
        // Demonstrates implementation of ACE SELECT class
        // AceSelect ace = new AceSelect();
        // ace.getInput();
-      
+        
+        
+             
+        Shuffle s = new Shuffle();
+        s.shuffleCardsVal();
     }
  }

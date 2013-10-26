@@ -77,7 +77,7 @@ public class Deck {
             valid = validCommand(command);
             if (!valid) 
             {
-                System.out.println("\tInvalid command. Enter S or D.");
+                System.out.println("\tInvalid command. Enter S or P.");
                 continue;
             }
         } 
