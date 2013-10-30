@@ -18,8 +18,12 @@ public class TwentyOne {
         //AceSelect ace = new AceSelect();
         //ace.getInput();
       
-        Shuffle s = new Shuffle();
-        s.shuffleCardsVal();
+        // Demonstrates a simple test program that shuffles an array
+        //Shuffle s = new Shuffle();
+        //s.shuffleCardsVal();
+        
+        GetCardVal val = new GetCardVal();
+        val.display();
     }
 }
 
