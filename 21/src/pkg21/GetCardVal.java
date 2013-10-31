@@ -14,7 +14,7 @@ public class GetCardVal implements Serializable{
     // an array of integer values which will be entered by
     //  the user.
     int val[] = new int[10];
-    int a, b, t;
+    int a, b, t; // temporary variables
     
     /*
      * DISPLAY
@@ -49,7 +49,7 @@ public class GetCardVal implements Serializable{
        // reads in values into val[] array
        //  until end is reached
        for (int i = 0; i <= val.length - 1; i++)
-       {
+       {           
            // read in int into temporary variable temp
            temp = in.nextInt();
            
@@ -57,12 +57,16 @@ public class GetCardVal implements Serializable{
            //  is out of range
            while (temp < 2 || temp > 10)
            {
-               System.out.println("Please enter a value between 2 and 10\n");
+               System.out.println("\n\t=======================================\n");
+               System.out.println("\tSORRY WRONG VALUE\n" +
+                                  "\tPlease enter a value between 2 and 10.\n");
+               System.out.println("\t=======================================\n");
+
                temp = in.nextInt();
            }
            
            // assign value in temp to val[] array index of i
-           val[i] = temp; 
+           val[i] = temp;   
        }
     }
     

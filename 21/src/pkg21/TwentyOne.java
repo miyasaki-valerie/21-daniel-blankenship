@@ -16,9 +16,9 @@ public class TwentyOne {
         name.getPlayerName(); // Prompts for player name
         name.display(); // displays player name
         
-        Deck fullDeck = new Deck();
-        fullDeck.getInput();
-       // fullDeck.showDeck();
+        //Deck fullDeck = new Deck();
+        //fullDeck.getInput();
+        //fullDeck.showDeck();
         //fullDeck.drawCard();
         
                 
@@ -34,7 +34,10 @@ public class TwentyOne {
         //Shuffle s = new Shuffle();
         //s.shuffleCardsVal();
         
-        GetCardVal val = new GetCardVal();
-        val.display();
+        //GetCardVal val = new GetCardVal();
+        //val.display();
+        
+        Chance chance = new Chance();
+        chance.display();
     }
 }
