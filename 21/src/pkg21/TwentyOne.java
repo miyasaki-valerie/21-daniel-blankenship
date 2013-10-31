@@ -2,6 +2,7 @@
  * Authors: Daniel Blankenship  
  *************************************************************/
 package pkg21;
+import java.io.IOException;
 import java.util.Scanner;
 
 public class TwentyOne {
@@ -9,22 +10,18 @@ public class TwentyOne {
     String name;
     String instructions = "\tTHIS IS THE GAME **21**\n\n";
     
-    public static void main(String[] args) {
+    public static void main(String[] args) throws IOException {
+        Hand hand = new Hand();
+        hand.displayHands();
+        
       TwentyOne to = new TwentyOne();  //access member functions of TwentyOne
       to.getName();                    //get user name    
       to.displayHelp();                //displays name and main title
             
       MainMenuView MainMenuView = new MainMenuView();
       MainMenuView.getInput();
+    
       
-<<<<<<< HEAD
-    SettingsMenuView s = new SettingsMenuView();
-    s.displaySettingsMenu();
-    s.getSetting();
-    
-    
-    SettingsMenuControl settingsCtrl = new SettingsMenuControl();
-    settingsCtrl.processSettingsCommand();
     
       //Displays Help Menu options
      /* HelpMenuView H = new HelpMenuView();
@@ -34,13 +31,10 @@ public class TwentyOne {
       // Displays Main Menu options     
       MainMenuView v = new MainMenuView();
       v.display();
-      v.userInput();
+      v.getInput();
       
       
-      MainMenuControl ctrl = new MainMenuControl();
-      ctrl.processCommand();
-=======
->>>>>>> branch 'master' of https://github.com/NelsonJustin/21-daniel-blankenship.git
+     
     }
     public void getName() {
         Scanner input = new Scanner(System.in);
