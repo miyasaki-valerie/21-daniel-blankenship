@@ -15,6 +15,7 @@ public class GetCardVal implements Serializable{
     //  the user.
     int val[] = new int[10];
     int a, b, t;
+    
     /*
      * DISPLAY
      */
