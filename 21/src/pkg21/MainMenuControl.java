@@ -1,4 +1,5 @@
 package pkg21;
+import java.io.IOException;
 import java.io.Serializable;
 
 /**
@@ -29,11 +30,14 @@ public class MainMenuControl implements Serializable  {
         displayHelpBorder();
     }
         
-    public void displayGameHelp() {
+    public void displayGameHelp() throws IOException {
         System.out.println();
         displayHelpBorder();     
-        System.out.println( 
-                 "\tDISPLAY HELP OPTIONS\n" ); 
+        //Edited to pull up Help Menu**Valerie Miyasaki
+       HelpMenuView HelpMenu = new HelpMenuView();
+       HelpMenu.displayHelp();
+        // System.out.println( 
+         //        "\tDISPLAY HELP OPTIONS\n" ); 
         displayHelpBorder();
     }
                 
