@@ -1,4 +1,5 @@
 package pkg21;
+import java.io.IOException;
 import java.io.Serializable;
 import java.util.Scanner;
 
@@ -25,7 +26,7 @@ public class MainMenuView implements Serializable  {
     } 
     
     // display the help menu and get the end users input selection
-    public String getInput() {       
+    public String getInput() throws IOException {       
         
         String gameStatus = InGame.PLAYING;
         do {
@@ -53,7 +54,7 @@ public class MainMenuView implements Serializable  {
          return gameStatus;
     }
 
-        // displays the help menu
+    // displays the help menu
     public final void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
@@ -63,20 +64,20 @@ public class MainMenuView implements Serializable  {
         }
         System.out.println("\t===============================================================\n");
     }
-
-    
-    
+  
     // retrieves the command entered by the end user
     protected final String getCommand() {
 
         Scanner inFile = new Scanner(System.in);
         String command;
         boolean valid = false;
+        
         do {
-
+            
             command = inFile.nextLine();
             command = command.trim().toUpperCase();
             valid = validCommand(command);
+            
             if (!valid) {
                 System.out.println("Invalid command. Please enter a valid command.");
                 continue;
