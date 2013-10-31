@@ -4,18 +4,20 @@ import java.util.Scanner;
 
 
 public class MainMenuView implements Serializable  {
-        
+      
    
     private final static String[][] menuItems = {
         {"S", "Start Game"},
         {"I", "Instructions"}, 
         {"H", "Help"},
-        {"X", "Exit Game"}        
+        {"X", "Exit Game"} ,
+        {"O", "Options/Settings"}
     };
     
     // Create instance of the HelpMenuControl (action) class
     private MainMenuControl MainMenuControl = new MainMenuControl();
     private GameScore GameScore = new GameScore();
+    private SettingsMenuView Setter = new SettingsMenuView();
     
     // default constructor
     public MainMenuView() {
@@ -40,7 +42,9 @@ public class MainMenuView implements Serializable  {
                     break;
                 case "H":
                     this.MainMenuControl.displayGameHelp();
-                    break;                  
+                    break;
+                case "O":
+                    this.Setter.getInput();
                 case "X":
                     return "EXIT";
             }

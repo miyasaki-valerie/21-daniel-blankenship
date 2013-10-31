@@ -36,6 +36,10 @@ public class MainMenuControl implements Serializable  {
                  "\tDISPLAY HELP OPTIONS\n" ); 
         displayHelpBorder();
     }
+    
+    public void displaySettingsMenu(){
+        
+    }
                 
     public void displayHelpBorder() {       
         System.out.println(
