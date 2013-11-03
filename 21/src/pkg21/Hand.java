@@ -43,6 +43,9 @@ public class Hand implements Serializable{
           if(sum == 15){
               System.out.println("Players hand total is: " + sum);
           }
+          else{
+              System.out.println("Unknown hand total!");
+          }
     }
 }
 
