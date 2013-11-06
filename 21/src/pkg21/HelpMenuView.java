@@ -13,22 +13,27 @@ import java.io.IOException;
 public class HelpMenuView {
     public char selection, ignore;
     public HelpMenuControl helpCommands = new HelpMenuControl();
+    public MainMenuControl c = new MainMenuControl();
     
     //Displays help menu
     public void displayHelp() throws IOException {
-      { System.out.println("HELP MENU OPTIONS");
-        System.out.println("Enter I = Game Instructions");
-        System.out.println("Enter R = Rules and Objective");
-        System.out.println("Enter T = Strategy Tips");
-        System.out.println("Enter X = Exit");
-       
+        c.displayHelpBorder();
+        System.out.println("\tHELP MENU OPTIONS");
+        System.out.println("\tEnter I = Game Instructions");
+        System.out.println("\tEnter R = Rules and Objective");
+        System.out.println("\tEnter T = Strategy Tips");
+        System.out.println("\tEnter X = Exit");
+        c.displayHelpBorder();
+        
         //gets user input
         selection = (char) System.in.read();
         
-       do{
+       do
+       {
             ignore = (char) System.in.read();
-        } while (ignore !='\n');
-             }
+            
+       } while (ignore !='\n');
+      
       
       //processes input for menu item selection using HelpMenu Control Object
       switch(selection) {

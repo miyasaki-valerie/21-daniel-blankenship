@@ -6,33 +6,31 @@ package pkg21;
 
 // Allows shuffle class to be used
 import java.util.Collections;
-// Allows linked list class to be used
-import java.util.LinkedList;
+import java.util.ArrayList;
+import java.io.Serializable;
 
 /**
  * SHUFFLE
  * Shuffles the contents of the cardVal array
  */
-public class Shuffle {
+public class Shuffle implements Serializable{
     
   // contains an array of card values  
-  private static final String[] cardVal = 
-  {"2", "3", "4", "5", "6", "7", "8",
-      "9", "10", "Jack", "Queen", "King", "Ace"};
-
+  int cardVal[] = {1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12};
+    
   /*
    * SHUFFLE CARD VALUES
    */
   void shuffleCardsVal()
   {  
      // Add values from cardVal into list1
-     LinkedList list = new LinkedList();
+     ArrayList list = new ArrayList();
      
      // Loops through cardVal array and puts the contents
      //  into a linked list
-     for (int i = 0; i < cardVal.length - 1; i++)
+     for (int i = 0; i < cardVal.length; i++)
      {
-         String temp = cardVal[i];
+         int temp = cardVal[i];
          list.add(temp);
      }
      
@@ -40,6 +38,6 @@ public class Shuffle {
      Collections.shuffle(list);
      
      // Display the shuffled card values
-     System.out.println();
+     System.out.println(list);
   }
 }

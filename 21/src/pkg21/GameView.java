@@ -1,66 +1,64 @@
+/*
+ * To change this template, choose Tools | Templates
+ * and open the template in the editor.
+ */
 package pkg21;
-import java.io.IOException;
 import java.io.Serializable;
+import java.io.IOException;
 import java.util.Scanner;
 
-
-public class MainMenuView implements Serializable  {
-        
-   
+/**
+ *
+ * @author Valerie
+ */
+public class GameView implements Serializable {
+    
     private final static String[][] menuItems = {
-        {"S", "Start Game"},
-        {"I", "Instructions"}, 
-        {"H", "Help"},
-        {"X", "Exit Game"}        
+        {"D", "Deal"},
+        {"S", "Shuffle"},
+        {"H", "Hit"},
+        {"P", "Pass"},
+        {"X", "Exit Game"}
     };
     
-    // Create instance of the HelpMenuControl (action) class
-    private MainMenuControl MainMenuControl = new MainMenuControl();
-    private GameView game = new GameView();
-    
-    // default constructor
-    public MainMenuView() {
-        
-    } 
-    
-    // display the help menu and get the end users input selection
-    public String getInput() throws IOException {       
-        
+    public String getInput() throws IOException {
         String gameStatus = InGame.PLAYING;
-     
-        do {    
+        do {
+            this.display();
+            
             // get command entered
             String command = this.getCommand();
             switch (command) {
-                case "S":
-                    game.getInput();
+                case "D":
+                    Deck deck1 = new Deck();
+                    deck1.drawCard();
                     break;
-                case "I":
-                    this.MainMenuControl.displayInstructions();
+                case "S":
+                    ;
                     break;
                 case "H":
-                    this.MainMenuControl.displayGameHelp();
-                    break;                  
+                    ;
+                    break;
+                case "P":
+                    ;
+                    break;
                 case "X":
                     return "EXIT";
-            } 
-        }while(!gameStatus.equals("EXIT"));
-                
+            }
+        } while (!gameStatus.equals("EXIT"));
         return gameStatus;
     }
-
-    // displays the help menu
+    
     public final void display() {
         System.out.println("\n\t===============================================================");
         System.out.println("\tEnter the letter associated with one of the following commands:");
 
-        for (int i = 0; i < MainMenuView.menuItems.length; i++) {
+        for (int i = 0; i < menuItems.length; i++) {
             System.out.println("\t   " + menuItems[i][0] + "\t" + menuItems[i][1]);
         }
         System.out.println("\t===============================================================\n");
     }
-  
-    // retrieves the command entered by the end user
+    
     protected final String getCommand() {
 
         Scanner inFile = new Scanner(System.in);
@@ -85,14 +83,13 @@ public class MainMenuView implements Serializable  {
      
     // determines if the command is valid
     private boolean validCommand(String command) {
-        String[][] items = MainMenuView.menuItems;
+        String[][] items = menuItems;
 
-        for (String[] item : MainMenuView.menuItems) {
+        for (String[] item : menuItems) {
             if (item[0].equals(command)) {
                 return true;
             }
         }
         return false;
     }
-  
 }

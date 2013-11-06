@@ -1,54 +1,70 @@
 package pkg21;
 
-//import java.io.Serializable;
-
 import java.io.IOException;
-import java.util.Random;
-import java.util.Scanner;
+import java.io.Serializable;
+import java.util.*;
 
-
-/**
+/*
  *
  * @author Valerie Miyasaki
  */
-public class Deck {
+public class Deck implements Serializable{
   
-    //an object that is a new array of the Card class 
-    private Card[] newDeck;
-    int i;
+    private Random shuffle = new Random();
+    public ArrayList<Card> fullDeck = new ArrayList<>();
     
-    //constructor to build the deck
+    private final static String[][] deckOptions = {
+        {"S", "Show Me the Deck"},
+        {"P", "Pick a Card"},
+        {"X", "EXIT"}
+    };
+    
+    /*
+     * DECK CONSTRUCTOR
+     */
     public Deck()
     {
-        i = 51;
-        newDeck = new Card[52];
-        int x=0;
-        
-        //loop through suits, then through ranks and assign to newDeck array
-        for (int s=0; s<=3; s++) //loop through suits
+        for (int rank = 1; rank <= 13; rank++)
         {
-            for (int r=0; r<=12; r++) //loop through ranks
+            for (int suit = 1; suit <= 4; suit++)
             {
-                newDeck[x]= new Card(r,s);
-                x++;
+                fullDeck.add(new Card(rank, suit));
             }
-        }
-       
-      }
+        }    
+    }
     
-        public String getInput() throws IOException
+    /*
+     * PRINT
+     */
+    public void print()
+    {
+        String deckOutput = "";
+        
+        for (Card card : fullDeck) 
+        {
+            deckOutput += card.toString() + "\n";
+        }
+        
+        System.out.println(deckOutput);
+    }
+    
+    /*
+     * GET INPUT
+     */
+    public String getInput() throws IOException
     {
         String gameStatus = InGame.PLAYING;
         
         while (!gameStatus.equals("EXIT"))
         {
-            System.out.println("Card Handling: "
+            System.out.println("\nCard Handling: "
                 + "\n\n\tInput S to show the entire deck.\n"
                 + "\tInput P to pick a card. Any card.\n"
                 + "\tInput X to exit to the main Menu"   );
             
             String command = this.getCommand();
-            switch (command) {
+            switch (command) 
+            {
                 case "S":
                     showDeck();
                     break;
@@ -56,7 +72,7 @@ public class Deck {
                     drawCard();
                     break;
                 case "X":
-                    MainMenuView main=new MainMenuView();
+                    MainMenuView main = new MainMenuView();
                     main.getInput();
                     return "EXIT";
             }
@@ -64,6 +80,9 @@ public class Deck {
         return gameStatus;
     }
     
+    /*
+     * GET COMMAND
+     */
     protected final String getCommand()
     {
         Scanner inFile = new Scanner(System.in);
@@ -80,11 +99,13 @@ public class Deck {
                 System.out.println("\tInvalid command. Enter S or P.");
                 continue;
             }
-        } 
-        
+        }     
         return command;
     }
     
+    /*
+     * VALIDATE COMMAND
+     */
     private boolean validCommand(String command)
     {
         String[][] items = deckOptions;
@@ -96,49 +117,34 @@ public class Deck {
                 return true;
             }
         }
-        
         return false;
     }
     
- 
-     private final static String[][] deckOptions = {
-        {"S", "Show Me the Deck"},
-        {"P", "Pick a Card"},
-        {"X", "EXIT"}
-    };
-    
-    
-
-    //prints deck
-    
-  public void showDeck()
-    {   int y;
-            for( y=0; y<52; y++){
-                System.out.println(newDeck[y]);
-            }
-    }
- 
-     
-    //picks a single spot from the array and shows the card    
-        public void drawCard()
-        {   //Card pick;
-            Random generator =new Random();
-            int randomCard = generator.nextInt(52);
-                       
-            System.out.println(newDeck[randomCard]);
-         
+    /*
+     * NOT a practical function for the actual game,
+     * but it could be used.
+     */
+    public void showDeck()
+    {   
+        for(int y = 0; y < 52; y++)
+        {
+            //System.out.println(newDeck[y]);
         }
-
-        
-        //to print a loop
-    /*public static void main(String [] args){
-       int x = 0;
-       for(int i=0; i<10; i++){
-           x += i; 
-           System.out.println(x);
-       }
-}*/
     }
+     
+    /*
+     * DRAW CARD
+     * draws a random card from the deck
+     */    
+    public void drawCard()
+    {   
+        //Card pick;
+        Random generator = new Random();
+        int randomCard = generator.nextInt(52);
+                       
+        //System.out.println(newDeck[randomCard]);    
+    }
+}
 
 
 

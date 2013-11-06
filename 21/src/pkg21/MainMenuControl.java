@@ -31,14 +31,8 @@ public class MainMenuControl implements Serializable  {
     }
         
     public void displayGameHelp() throws IOException {
-        System.out.println();
-        displayHelpBorder();     
-        //Edited to pull up Help Menu**Valerie Miyasaki
-       HelpMenuView HelpMenu = new HelpMenuView();
-       HelpMenu.displayHelp();
-        // System.out.println( 
-         //        "\tDISPLAY HELP OPTIONS\n" ); 
-        displayHelpBorder();
+        HelpMenuView HelpMenu = new HelpMenuView();
+        HelpMenu.displayHelp();
     }
                 
     public void displayHelpBorder() {       
