@@ -32,7 +32,8 @@ public class MainMenuControl implements Serializable  {
         
     public void displayGameHelp() throws IOException {
         HelpMenuView HelpMenu = new HelpMenuView();
-        HelpMenu.displayHelp();
+        HelpMenu.display();
+        HelpMenu.getInput();
     }
                 
     public void displayHelpBorder() {       

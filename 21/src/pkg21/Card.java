@@ -3,50 +3,48 @@
  * and open the template in the editor.
  */
 package pkg21;
-import java.io.Serializable;
 
-/*
+/**
  *
  * @author Valerie Miyasaki
  */
-public class Card implements Serializable{
-    private int rank;
-    private int suit;
-
+public class Card
+{
+    private Suit suit;              // instance of Suit enum
+    private CardValue cardValue;    // instance of CardValue enum
+    
     /*
      * CARD CONSTRUCTOR
+     * sets the values of cardValue and suit
      */
-    public Card(int rank, int suit){
-        this.rank = rank;
+    public Card (CardValue cardValue, Suit suit)
+    {
+        this.cardValue = cardValue;
         this.suit = suit;
     }
     
-    @Override
-    public String toString() {
-         String Srank = "", Ssuit = "";
-        
-         switch(rank) {
-            case 1:  Srank = "Ace";     break;
-            case 2:  Srank = "Two";     break;
-            case 3:  Srank = "Three";   break;
-            case 4:  Srank = "Four";    break;
-            case 5:  Srank = "Five";    break;
-            case 6:  Srank = "Six";     break;
-            case 7:  Srank = "Seven";   break;
-            case 8:  Srank = "Eight";   break;
-            case 9:  Srank = "Nine";    break;
-            case 10: Srank = "Ten";     break;
-            case 11: Srank = "Jack";    break;
-            case 12: Srank = "Queen";   break;
-            case 13: Srank = "King";    break;
-        }
-        switch(suit) {
-            case 1: Ssuit = "Clubs";    break;
-            case 2: Ssuit = "Diamonds"; break;
-            case 3: Ssuit = "Hearts";   break;
-            case 4: Ssuit = "Spades";   break;
-        }
-        return Srank + " of " + Ssuit;
+    // returns value of suit
+    public Suit getSuit()
+    {
+        return suit;
+    }
+    
+    // returns value of setSuit
+    public void setSuit(Suit suit)
+    {
+        this.suit = suit;
+    }
+    
+    // returns the value of cardValue
+    public CardValue getCardValue()
+    {
+        return cardValue;
+    }
+    
+    // set the value of cardValue
+    public void setVardValue(CardValue cardValue)
+    {
+        this.cardValue = cardValue;
     }
 }
 

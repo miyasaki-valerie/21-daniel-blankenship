@@ -16,12 +16,13 @@ public class TwentyOne {
          * asks for the user name, displays it
          *  along with title of game
          */
-        //GetInitPrompt name = new GetInitPrompt();
-        //name.getPlayerName();                   // Prompts for player name
-        //name.display();                         // displays player name
+        GetInitPrompt name = new GetInitPrompt();
+        name.getPlayerName();                   // Prompts for player name
+        name.display();                         // displays player name
         
-   
-        GameControl game = new GameControl();
-        game.calcRound();
+        MainMenuView menu = new MainMenuView();
+        menu.display();
+        menu.getInput();
+        
     }
 }

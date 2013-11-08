@@ -5,56 +5,86 @@
 package pkg21;
 
 import java.io.IOException;
+import java.io.Serializable;
+import java.util.Scanner;
 
 /**
  *
  * @author Valerie Lesson 4
  */
-public class HelpMenuView {
-    public char selection, ignore;
-    public HelpMenuControl helpCommands = new HelpMenuControl();
-    public MainMenuControl c = new MainMenuControl();
+public class HelpMenuView implements Serializable{
     
-    //Displays help menu
-    public void displayHelp() throws IOException {
-        c.displayHelpBorder();
-        System.out.println("\tHELP MENU OPTIONS");
-        System.out.println("\tEnter I = Game Instructions");
-        System.out.println("\tEnter R = Rules and Objective");
-        System.out.println("\tEnter T = Strategy Tips");
-        System.out.println("\tEnter X = Exit");
-        c.displayHelpBorder();
+    public HelpMenuControl HelpMenuControl = new HelpMenuControl();
+    public MainMenuView main = new MainMenuView();
+    
+    private final static String[][] helpMenuItems = {
+        {"I", "Show Instructions"},
+        {"X", "Exit Menu"}
+    };
+                
+    public String getInput() throws IOException {
         
-        //gets user input
-        selection = (char) System.in.read();
+        String gameStatus = InGame.PLAYING;
         
-       do
-       {
-            ignore = (char) System.in.read();
-            
-       } while (ignore !='\n');
-      
-      
-      //processes input for menu item selection using HelpMenu Control Object
-      switch(selection) {
-            
-            case 'I':
-                helpCommands.displayInstructions();
-                break;
-                
-            case 'R':
-                helpCommands.displayRules();
-                break;
-                
-            case 'T':
-                helpCommands.displayTips();
-                
-            case 'X':
-                helpCommands.exitToMain();
-                break;
-            
-        }
+        do {
+            String command = this.getCommand();
+            switch (command) {
+                case "I":
+                    HelpMenuControl.displayInstructions();
+                    break;
+                case "X":
+                    main.display();
+                    main.getInput();
+                    return "EXIT";
+            }
+        }while (!gameStatus.equals("EXIT"));
+        
+        return gameStatus;
     }
+    
+    public final void display() {
+        System.out.println("\n\t===============================================================");
+        System.out.println("\tEnter the letter associated with one of the following commands:");
+
+        for (int i = 0; i < HelpMenuView.helpMenuItems.length; i++) {
+            System.out.println("\t   " + helpMenuItems[i][0] + "\t" + helpMenuItems[i][1]);
+        }
+        System.out.println("\t===============================================================\n");
+    }
+    
+    protected final String getCommand() {
+
+        Scanner inFile = new Scanner(System.in);
+        String command;
+        boolean valid = false;
+        
+        do {
+            
+            command = inFile.nextLine();
+            command = command.trim().toUpperCase();
+            valid = validCommand(command);
+            
+            if (!valid) {
+                System.out.println("Invalid command. Please enter a valid command.");
+                continue;
+            }
+                
+        } while (!valid);
+        
+        return command;
+    }
+    
+      private boolean validCommand(String command) {
+        String[][] items = HelpMenuView.helpMenuItems;
+
+        for (String[] item : HelpMenuView.helpMenuItems) {
+            if (item[0].equals(command)) {
+                return true;
+            }
+        }
+        return false;
+    }
+  
    
   
 }

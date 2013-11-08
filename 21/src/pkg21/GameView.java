@@ -12,12 +12,11 @@ import java.util.Scanner;
  * @author Valerie
  */
 public class GameView implements Serializable {
-    
+    private final Deck deck = new Deck();
+    private final GameControl game = new GameControl();
     private final static String[][] menuItems = {
         {"D", "Deal"},
         {"S", "Shuffle"},
-        {"H", "Hit"},
-        {"P", "Pass"},
         {"X", "Exit Game"}
     };
     
@@ -30,17 +29,12 @@ public class GameView implements Serializable {
             String command = this.getCommand();
             switch (command) {
                 case "D":
-                    Deck deck1 = new Deck();
-                    deck1.drawCard();
+                    game.requestGameSize();
+                    game.calcRound();
                     break;
                 case "S":
-                    ;
-                    break;
-                case "H":
-                    ;
-                    break;
-                case "P":
-                    ;
+                    deck.shuffleDeck();
+                    System.out.println("\n\tDeck has been successfully shuffled!\n");
                     break;
                 case "X":
                     return "EXIT";
