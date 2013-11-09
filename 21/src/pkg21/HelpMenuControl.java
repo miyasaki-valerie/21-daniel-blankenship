@@ -27,13 +27,7 @@ public class HelpMenuControl implements Serializable  {
                 + "\n\tWhichever player gets the closest to 21 without"
                 + "\n\tgoing over 21 wins the round.");
         }
- 
-       
-       /* public void exitToMain() {
-        System.out.println();
-        MainMenuView showMain = new MainMenuView();
-                showMain.display();
-        }*/
+
 } 
     
 

@@ -26,7 +26,7 @@ public class HelpMenuView implements Serializable{
         
         String gameStatus = InGame.PLAYING;
         
-        do {
+        while (!gameStatus.equals("EXIT")){
             String command = this.getCommand();
             switch (command) {
                 case "I":
@@ -37,7 +37,7 @@ public class HelpMenuView implements Serializable{
                     main.getInput();
                     return "EXIT";
             }
-        }while (!gameStatus.equals("EXIT"));
+        }
         
         return gameStatus;
     }
