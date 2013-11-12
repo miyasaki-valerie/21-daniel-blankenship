@@ -3,12 +3,12 @@
  * and open the template in the editor.
  */
 package pkg21;
-
+import java.io.*;
 /**
  *
  * @author Valerie Miyasaki
  */
-public class Card
+public class Card implements Serializable
 {
     private Suit suit;              // instance of Suit enum
     private CardValue cardValue;    // instance of CardValue enum

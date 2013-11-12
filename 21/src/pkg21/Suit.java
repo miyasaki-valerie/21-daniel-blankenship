@@ -3,6 +3,7 @@
  * and open the template in the editor.
  */
 package pkg21;
+import java.io.*;
 
 /**
  * SUIT ENUM
@@ -10,7 +11,7 @@ package pkg21;
  * 
  * @author Daniel Blankenship
  */
-public enum Suit {
+public enum Suit implements Serializable {
     HEARTS,
     SPADES,
     CLUBS,

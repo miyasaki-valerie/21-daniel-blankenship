@@ -3,10 +3,7 @@ import java.io.IOException;
 import java.io.Serializable;
 import java.util.Scanner;
 
-
 public class MainMenuView implements Serializable  {
-        
-   
     private final static String[][] menuItems = {
         {"S", "Start Game"},
         {"I", "Instructions"}, 
@@ -94,5 +91,26 @@ public class MainMenuView implements Serializable  {
         }
         return false;
     }
+
+    //
+    // GETTERS and SETTERS
+    //
+    public MainMenuControl getMainMenuControl() {
+        return MainMenuControl;
+    }
+
+    public void setMainMenuControl(MainMenuControl MainMenuControl) {
+        this.MainMenuControl = MainMenuControl;
+    }
+
+    public GameView getGame() {
+        return game;
+    }
+
+    public void setGame(GameView game) {
+        this.game = game;
+    }
+    
+    
   
 }

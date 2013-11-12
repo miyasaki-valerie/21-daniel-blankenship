@@ -46,8 +46,8 @@ public class GameControl implements Serializable{
             System.out.println("\t   ROUND " + temp);
             System.out.println("\t~~~~~~~~~~~~~~");
             
-            dealerSum = deck.dealer();
-            playerSum = deck.player();
+            dealerSum = deck.drawDealer();
+            playerSum = deck.drawPlayer();
             
             if (dealerSum == 21)
                 dealerScore+=2;

@@ -3,12 +3,9 @@
 + * Author: Daniel Blankenship  
   *************************************************************/
 package pkg21;
-import java.io.IOException;
-import java.util.*;
+import java.io.*;
 
-public class TwentyOne {
-    
-    
+public class TwentyOne implements Serializable{
     public static void main(String[] args) throws IOException {
                 
         /*

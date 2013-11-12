@@ -1,6 +1,7 @@
 package pkg21;
 
 import java.util.*;
+import java.io.*;
 
 /*
  * DECK
@@ -8,7 +9,7 @@ import java.util.*;
  * 
  * @author Valerie Miyasaki
  */
-public class Deck 
+public class Deck implements Serializable
 {
     // declares an ArrayList of type Card from the Card class
     private ArrayList<Card> deck;
@@ -51,7 +52,11 @@ public class Deck
         Collections.shuffle(deck);
     }
     
-    public int dealer()
+   /*
+    *   DRAW DEALER
+    *   draws two cards for the dealer
+    */
+    public int drawDealer()
     {
         int temp1, temp2, sum;
         Random rand1 = new Random();
@@ -138,10 +143,10 @@ public class Deck
     }
     
    /*
-    * PLAYER
+    * DRAW PLAYER
     * deals the player a card from a shuffled deck
     */
-    public int player()
+    public int drawPlayer()
     {
         String command;                // these are temporary variables only to 
         int temp1, temp2, sum;  //  only to be used in this function
@@ -253,6 +258,19 @@ public class Deck
         // return card total
         return sum;
     }    
+
+    //
+    //  GETTERS and SETTERS
+    //
+    public ArrayList<Card> getDeck() {
+        return deck;
+    }
+
+    public void setDeck(ArrayList<Card> deck) {
+        this.deck = deck;
+    }
+    
+    
 }
 
 

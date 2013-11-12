@@ -19,6 +19,7 @@ public class MainMenuControl implements Serializable  {
         System.out.println( "\tEXECUTE GAME\n" );
         displayHelpBorder();
     }
+    
     public void displayInstructions() {
         System.out.println();
         this.displayHelpBorder();             
