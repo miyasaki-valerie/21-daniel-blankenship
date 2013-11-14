@@ -27,9 +27,9 @@ public class GetInitPrompt implements Serializable {
      * GET PLAYER NAME
      */
     public void getPlayerName() {
-        Scanner input = new Scanner(System.in);
+       Scanner inFile = TwentyOne.getInputFile();
         System.out.println("Please enter your name: ");
-        this.name = input.next();
+        this.name = inFile.next();
     }
     
     /*

@@ -24,15 +24,15 @@ public class Chance implements Serializable{
      */
     void chance()
     {
-        Scanner in = new Scanner(System.in);
-        card = in.nextInt(); // read in value into card
+        Scanner inFile = TwentyOne.getInputFile();
+        card = inFile.nextInt(); // read in value into card
         
         // if the value entered is out of bounds display error message
         while (card < 2 || card > 14)
         {
             System.out.println(
                     "\tERROR: PLEASE ENTER A VALUE BETWEEN 2 AND 14!!\n");
-            card = in.nextInt();
+            card = inFile.nextInt();
         }
         
         // loop through the array

@@ -12,7 +12,7 @@ import java.io.*;
 public class Deck implements Serializable
 {
     // declares an ArrayList of type Card from the Card class
-    private ArrayList<Card> deck;
+    public static ArrayList<Card> deck;
     
     /*
      * DECK CONSTRUCTOR
@@ -21,7 +21,7 @@ public class Deck implements Serializable
     public Deck()
     {
         // initialize instance of ArrayList
-        this.deck = new ArrayList<Card>();
+        Deck.deck = new ArrayList<Card>();
         for (int i=0; i<13; i++)            // loop runs til i reaches 13
         {                                   //  allows values of CardValue class 
                                             //  to be created
@@ -56,7 +56,9 @@ public class Deck implements Serializable
     *   DRAW DEALER
     *   draws two cards for the dealer
     */
-    public int drawDealer()
+    
+    //Moved to complete Lesson 8 Paired Programming Assignment
+   /* public int drawDealer()
     {
         int temp1, temp2, sum;
         Random rand1 = new Random();
@@ -141,12 +143,14 @@ public class Deck implements Serializable
         
         return sum;
     }
-    
+    */
    /*
     * DRAW PLAYER
     * deals the player a card from a shuffled deck
     */
-    public int drawPlayer()
+    
+    //Moved to complete Lesson 8 Paired Programming Assignment
+   /* public int drawPlayer()
     {
         String command;                // these are temporary variables only to 
         int temp1, temp2, sum;  //  only to be used in this function
@@ -258,7 +262,7 @@ public class Deck implements Serializable
         // return card total
         return sum;
     }    
-
+*/
     //
     //  GETTERS and SETTERS
     //
@@ -267,7 +271,7 @@ public class Deck implements Serializable
     }
 
     public void setDeck(ArrayList<Card> deck) {
-        this.deck = deck;
+        Deck.deck = deck;
     }
     
     

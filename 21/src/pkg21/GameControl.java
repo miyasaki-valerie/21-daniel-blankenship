@@ -11,7 +11,8 @@ import java.util.*;
  * @author Daniel Blankenship
  */
 public class GameControl implements Serializable{
-    private final Deck deck = new Deck();
+    private final Dealer dealer = new Dealer();
+    private final Player player = new Player();
     private int gameSize = 0;
     
     /********************************************
@@ -22,11 +23,11 @@ public class GameControl implements Serializable{
      *******************************************/
     void requestGameSize()
     {
-        Scanner input = new Scanner(System.in);
+        Scanner inFile = TwentyOne.getInputFile();
         System.out.println("\n****************************************************\n"
                            + "*   \tHow many rounds would you like to play?\n"
                            + "*****************************************************");
-        this.gameSize = input.nextInt();    
+        this.gameSize = inFile.nextInt();    
     }
     
     /********************************************
@@ -46,8 +47,8 @@ public class GameControl implements Serializable{
             System.out.println("\t   ROUND " + temp);
             System.out.println("\t~~~~~~~~~~~~~~");
             
-            dealerSum = deck.drawDealer();
-            playerSum = deck.drawPlayer();
+            dealerSum = dealer.drawDealer();
+            playerSum = player.drawPlayer();
             
             if (dealerSum == 21)
                 dealerScore+=2;

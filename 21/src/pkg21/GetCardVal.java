@@ -1,15 +1,14 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+ Individual Assignment Only
+ 
 package pkg21;
 import java.io.Serializable;
 import java.util.Scanner;
 
-/**
+
  *
  * @author Daniel Blankenship
- */
+ *
 public class GetCardVal implements Serializable{
     // an array of integer values which will be entered by
     //  the user.
@@ -18,7 +17,7 @@ public class GetCardVal implements Serializable{
     
     /*
      * DISPLAY
-     */
+     *
     void display()
     {
         System.out.println("\t=======================================\n");
@@ -39,7 +38,7 @@ public class GetCardVal implements Serializable{
     /*
      * GET ARRAY VALUES
      * read in list of numbers into val[] array
-     */
+     *
     void getArrayVal()
     {
        // declare an instance of Scanner
@@ -104,3 +103,4 @@ public class GetCardVal implements Serializable{
         this.val = val;
     }
 }
+*/

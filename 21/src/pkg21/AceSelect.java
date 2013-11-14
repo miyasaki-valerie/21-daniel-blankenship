@@ -1,7 +1,6 @@
 /*
- * To change this template, choose Tools | Templates
- * and open the template in the editor.
- */
+ Class not currently used.  
+
 package pkg21;
 import java.io.Serializable;
 import java.util.Scanner;
@@ -11,7 +10,7 @@ import java.util.Scanner;
  * 
  * This class allows the player to select whether 
  *  Aces are High or Low when selected for the round
- */
+ 
 public class AceSelect implements Serializable {
     
     // Multidimensional String
@@ -123,3 +122,4 @@ public class AceSelect implements Serializable {
     // GETTERS and SETTERS
     //
 }
+*/

@@ -60,7 +60,7 @@ public class MainMenuView implements Serializable  {
     // retrieves the command entered by the end user
     protected final String getCommand() {
 
-        Scanner inFile = new Scanner(System.in);
+       Scanner inFile = TwentyOne.getInputFile();
         String command;
         boolean valid = false;
         

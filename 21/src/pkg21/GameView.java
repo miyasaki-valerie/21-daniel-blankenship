@@ -55,7 +55,7 @@ public class GameView implements Serializable {
     
     protected final String getCommand() {
 
-        Scanner inFile = new Scanner(System.in);
+        Scanner inFile = TwentyOne.getInputFile();
         String command;
         boolean valid = false;
         
