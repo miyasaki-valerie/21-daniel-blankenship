@@ -4,10 +4,18 @@
   *************************************************************/
 package pkg21;
 import java.io.*;
+import java.util.Scanner;
 
 public class TwentyOne implements Serializable{
+    private static Scanner inFile = new Scanner(System.in);
+    
+        public static Scanner getInputFile(){
+            return TwentyOne.inFile;
+        }
+    
     public static void main(String[] args) throws IOException {
-                
+          
+         
         /*
          * GET INITIAL PROMPT
          * asks for the user name, displays it
