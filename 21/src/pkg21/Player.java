@@ -17,16 +17,16 @@ public class Player {
         
     }
     
-    public int drawPlayer()
+    public static int drawPlayer()
     {
         String command;                // these are temporary variables only to 
         int temp1, temp2, sum;  //  only to be used in this function
         
         // allows the user to be able input response 'Y' || 'N'
-        Scanner inFile = new Scanner(System.in);
+        Scanner inFile = TwentyOne.getInputFile();
         Random rand1 = new Random();    // rand1 to recieve rand int for card1
         Random rand2 = new Random();    // rand2 to recieve rand int for card2
-        Random rand3 = new Random();
+        
         temp1 = rand1.nextInt(52);      // store rand1 int into temp1
         temp2 = rand2.nextInt(52);      // store rand2 int into temp2
         
