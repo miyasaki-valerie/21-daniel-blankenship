@@ -12,12 +12,13 @@ import java.util.Scanner;
  *
  * @author Valerie Lesson 4
  */
+
 public class HelpMenuView implements Serializable{
     
     public HelpMenuControl HelpMenuControl = new HelpMenuControl();
     public MainMenuView main = new MainMenuView();
     
-    private final static String[][] helpMenuItems = {
+ private final static String[][] helpMenuItems = {
         {"I", "Show Instructions"},
         {"X", "Exit Menu"}
     };
@@ -54,7 +55,7 @@ public class HelpMenuView implements Serializable{
     
     protected final String getCommand() {
 
-        Scanner inFile = TwentyOne.getInputFile();
+        Scanner inFile = new Scanner(System.in);
         String command;
         boolean valid = false;
         
@@ -85,10 +86,6 @@ public class HelpMenuView implements Serializable{
         return false;
     }
   
-   
-  
 }
-
-   
     
    

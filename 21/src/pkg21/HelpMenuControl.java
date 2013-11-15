@@ -4,7 +4,6 @@
  */
 package pkg21;
 
-import java.io.IOException;
 import java.io.Serializable;
 
 /**
@@ -13,8 +12,9 @@ import java.io.Serializable;
  */
 public class HelpMenuControl implements Serializable  {
     
-        public HelpMenuControl() 
-        {
+
+    public HelpMenuControl(){
+
         
         } 
 

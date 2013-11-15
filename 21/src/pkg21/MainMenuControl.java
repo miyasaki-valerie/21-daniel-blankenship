@@ -36,6 +36,10 @@ public class MainMenuControl implements Serializable  {
         HelpMenu.display();
         HelpMenu.getInput();
     }
+    
+    public void displaySettingsMenu(){
+        
+    }
                 
     public void displayHelpBorder() {       
         System.out.println(
