@@ -18,14 +18,8 @@ public class HelpMenuControl implements Serializable  {
         
         } 
 
-        public void displayInstructions() {
-            System.out.println();
-            System.out.println( 
-                "\tThis is the game 21, also known as Blackjack. "
-                + "\n\tEach player is dealt two cards. Then has the"
-                + "\n\topportunity to hit or stay."
-                + "\n\tWhichever player gets the closest to 21 without"
-                + "\n\tgoing over 21 wins the round.");
+        public static void displayInstructions() {
+            MainMenuControl.displayInstructions();
         }
 
 } 
