@@ -58,8 +58,9 @@ public TwentyOne (){
       v.getInput();
     
         
-        GetCardVal val = new GetCardVal();
+      /*  
+      GetCardVal val = new GetCardVal();
         val.display();
-
+      */
     }
 }
