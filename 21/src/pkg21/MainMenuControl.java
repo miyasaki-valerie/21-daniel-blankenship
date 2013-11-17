@@ -20,9 +20,9 @@ public class MainMenuControl implements Serializable  {
         displayHelpBorder();
     }
     
-    public void displayInstructions() {
+    public static void displayInstructions() {
         System.out.println();
-        this.displayHelpBorder();             
+        MainMenuControl.displayHelpBorder();             
         System.out.println( 
                 "\tThis is the game 21, also known as Blackjack. "
                 + "\n\tEach player draws a card and decides to hit or stay. "
@@ -41,7 +41,7 @@ public class MainMenuControl implements Serializable  {
         
     }
                 
-    public void displayHelpBorder() {       
+    public static void displayHelpBorder() {       
         System.out.println(
         "\t~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~");
     }
